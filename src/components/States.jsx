@@ -12,7 +12,7 @@ export function Loading() {
 export function ErrorMessage({ message, onRetry }) {
   return (
     <div className="state state--error" role="alert">
-      <p className="state__title">⚠ Error de transmisión</p>
+      <p className="state__title">Error de transmisión</p>
       <p>{message}</p>
       <button type="button" className="btn" onClick={onRetry}>Reintentar</button>
     </div>

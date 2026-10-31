@@ -46,7 +46,7 @@ export default function Filters({ filters, universes, favoritesCount, onChange, 
         />
         <span>Solo favoritos ({favoritesCount})</span>
       </label>
-      <button type="button" className="btn" onClick={onRandom}>🎲 Traje aleatorio</button>
+      <button type="button" className="btn" onClick={onRandom}>Traje aleatorio</button>
     </section>
   );
 }
