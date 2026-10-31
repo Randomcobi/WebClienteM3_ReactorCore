@@ -1,6 +1,6 @@
 // Buscador y filtros (inputs controlados: el valor viene de App)
 
-export default function Filters({ filters, universes, onChange }) {
+export default function Filters({ filters, universes, favoritesCount, onChange, onRandom }) {
   return (
     <section className="controls" aria-label="Búsqueda y filtros">
       <label className="field">
@@ -38,6 +38,15 @@ export default function Filters({ filters, universes, onChange }) {
         />
         <span>Solo con imagen</span>
       </label>
+      <label className="field field--check">
+        <input
+          type="checkbox"
+          checked={filters.onlyFavorites}
+          onChange={(e) => onChange({ onlyFavorites: e.target.checked })}
+        />
+        <span>Solo favoritos ({favoritesCount})</span>
+      </label>
+      <button type="button" className="btn" onClick={onRandom}>🎲 Traje aleatorio</button>
     </section>
   );
 }

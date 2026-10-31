@@ -3,7 +3,7 @@
 import GundamCard from './GundamCard.jsx';
 import { EmptyMessage } from './States.jsx';
 
-export default function GundamList({ gundams, visible, onShowMore }) {
+export default function GundamList({ gundams, visible, onShowMore, favorites, onToggleFavorite }) {
   if (gundams.length === 0) return <EmptyMessage />;
 
   const shown = gundams.slice(0, visible);
@@ -14,7 +14,11 @@ export default function GundamList({ gundams, visible, onShowMore }) {
       <ul className="grid">
         {shown.map((gundam) => (
           <li key={gundam.id}>
-            <GundamCard gundam={gundam} />
+            <GundamCard
+              gundam={gundam}
+              isFavorite={favorites.includes(gundam.id)}
+              onToggleFavorite={() => onToggleFavorite(gundam.id)}
+            />
           </li>
         ))}
       </ul>
